@@ -1,0 +1,47 @@
+<?php require_once("includes/connect.php.txt");?>
+<?php require_once("includes/functions.php.txt");?>
+<?php include("includes/header.php.txt");?>
+
+<div id="content">
+<table id="table">
+<tr>
+<td id="nav">
+<ul class="info">
+<?php 
+$info_set=mysqli_query($connection,"SELECT * FROM information");
+confirm_query($info_set);
+while($info=mysqli_fetch_array($info_set)){
+echo "<li class=\"selected\"><a href=\"content.php.txt?info=".urlencode($info["id"])."\">
+ {$info["menu"]}</a> </li>";
+
+
+
+
+$page_set=mysqli_query($connection,"SELECT * FROM pages WHERE information_id={$info["id"]}");
+echo "<ul class=\"pages\">";
+//backslash ide zbog duplih navodnika
+confirm_query($page_set);
+
+while($page=mysqli_fetch_array($page_set)){
+echo "<li><a href=\"content.php.txt?page=".urlencode($page["id"])."\">
+{$page["menu"]}</a> </li>";
+}
+echo "</ul>";
+}
+?>
+</ul>
+</td>
+<td id="main">
+<h2>Main content</h2>
+<td>
+</tr>
+</table>
+</div>
+</td></tr></table>
+</div> 
+<?php
+require("includes/footer.php.txt");
+?>
+
+
+

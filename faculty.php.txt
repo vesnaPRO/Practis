@@ -1,0 +1,27 @@
+<?php
+include("includes/header.php.txt");
+?>
+<div id="content">
+<table id="table">
+<tr>
+<td id="nav">
+&nbsp;
+</td>
+<td id="page">
+<h3>Faculty Area</h3>
+<p>Welcome to the staff area</p>
+<ul>
+<li><a href="content.php.txt">Manage Site</a></li>
+<li><a href="new_fac_user.php.txt">Add New Faculty User</a></li>
+<li><a href="logout.php.txt">Logout</a></li>
+</ul>
+</td></tr></table>
+</div> 
+<?php
+include("includes/footer.php.txt");
+?>
+
+
+
+
+
